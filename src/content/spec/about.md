@@ -4,9 +4,9 @@ description: "Lorem ipsum dolor sit amet"
 pubDate: 2021-08-08
 ---
 
-This website is built with the **Astro** framework using the [Aruma](https://github.com/matsuzaka-yuki/Aruma) theme.
+This website is built with the **Astro** framework using the [Aruma](https://github.com/LyraVoid/Aruma) theme.
 
-::github{repo="matsuzaka-yuki/Aruma"}
+::github{repo="LyraVoid/Aruma"}
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

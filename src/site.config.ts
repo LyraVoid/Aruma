@@ -150,7 +150,7 @@ export const siteConfig: SiteConfig = {
 		social: [
 			{
 				name: "GitHub",
-				url: "https://github.com/matsuzaka-yuki/Aruma",
+				url: "https://github.com/LyraVoid/Aruma",
 				icon: "fa6-brands:github",
 			},
 			{
@@ -175,7 +175,7 @@ export const siteConfig: SiteConfig = {
 		social: [
 			{
 				name: "GitHub",
-				url: "https://github.com/matsuzaka-yuki/Aruma",
+				url: "https://github.com/LyraVoid/Aruma",
 				icon: "fa6-brands:github",
 			},
 			{
@@ -199,7 +199,7 @@ export const siteConfig: SiteConfig = {
 		social: [
 			{
 				name: "GitHub",
-				url: "https://github.com/matsuzaka-yuki/Aruma",
+				url: "https://github.com/LyraVoid/Aruma",
 				icon: "fa6-brands:github",
 			},
 			{
