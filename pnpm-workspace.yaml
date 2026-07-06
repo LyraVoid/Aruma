@@ -1,4 +1,7 @@
-onlyBuiltDependencies:
-  - esbuild
-  - sharp
-  - ttf2woff2
+allowBuilds:
+  esbuild: true
+  sharp: true
+  ttf2woff2: true
+
+overrides:
+  ttf2woff2: 4.0.5

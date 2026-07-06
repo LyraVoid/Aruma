@@ -1,5 +1,6 @@
 // @ts-check
 
+import { unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
@@ -35,35 +36,37 @@ export default defineConfig({
 	},
 
 	markdown: {
-		remarkPlugins: [
-			remarkMath,
-			remarkFixGithubAdmonitions,
-			remarkDirective,
-			parseDirectiveNode,
-			remarkDetectMath,
-		],
-		rehypePlugins: [
-			[rehypeKatex, { output: "htmlAndMath" }],
-			rehypeWrapTable,
-			[
-				rehypeComponents,
-				{
-					components: {
-						github: GithubCardComponent,
-						note: (/** @type {any} */ x, /** @type {any} */ y) =>
-							AdmonitionComponent(x, y, "note"),
-						tip: (/** @type {any} */ x, /** @type {any} */ y) =>
-							AdmonitionComponent(x, y, "tip"),
-						important: (/** @type {any} */ x, /** @type {any} */ y) =>
-							AdmonitionComponent(x, y, "important"),
-						caution: (/** @type {any} */ x, /** @type {any} */ y) =>
-							AdmonitionComponent(x, y, "caution"),
-						warning: (/** @type {any} */ x, /** @type {any} */ y) =>
-							AdmonitionComponent(x, y, "warning"),
-					},
-				},
+		processor: unified({
+			remarkPlugins: [
+				remarkMath,
+				remarkFixGithubAdmonitions,
+				remarkDirective,
+				parseDirectiveNode,
+				remarkDetectMath,
 			],
-		],
+			rehypePlugins: [
+				[rehypeKatex, { output: "htmlAndMath" }],
+				rehypeWrapTable,
+				[
+					rehypeComponents,
+					{
+						components: {
+							github: GithubCardComponent,
+							note: (/** @type {any} */ x, /** @type {any} */ y) =>
+								AdmonitionComponent(x, y, "note"),
+							tip: (/** @type {any} */ x, /** @type {any} */ y) =>
+								AdmonitionComponent(x, y, "tip"),
+							important: (/** @type {any} */ x, /** @type {any} */ y) =>
+								AdmonitionComponent(x, y, "important"),
+							caution: (/** @type {any} */ x, /** @type {any} */ y) =>
+								AdmonitionComponent(x, y, "caution"),
+							warning: (/** @type {any} */ x, /** @type {any} */ y) =>
+								AdmonitionComponent(x, y, "warning"),
+						},
+					},
+				],
+			],
+		}),
 	},
 
 	vite: {
